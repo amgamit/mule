@@ -1,0 +1,238 @@
+2019-04-30 18:07:27,298 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'testmuleproject'                       +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:07:27,515 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2019-04-30 18:07:27,667 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2019-04-30 18:07:27,950 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2019-04-30 18:07:27,950 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.9)
+2019-04-30 18:07:28,274 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@5990e6c5: startup date [Tue Apr 30 18:07:28 IST 2019]; root of context hierarchy
+2019-04-30 18:07:30,180 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-04-30 18:07:31,843 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2019-04-30 18:07:32,537 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-tx-log\tx1.log and C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-tx-log\tx2.log
+2019-04-30 18:07:32,644 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-xa-tx-log\tx1.log and C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-xa-tx-log\tx2.log
+2019-04-30 18:07:32,804 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2019-04-30 18:07:32,821 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testmavenFlow
+2019-04-30 18:07:32,821 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@10947c4e
+2019-04-30 18:07:32,900 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testmavenFlow.stage1
+2019-04-30 18:07:34,323 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\gamit\AnypointStudio\workspace\.mule\apps\testmuleproject\testmuleproject.xml'}]"
+2019-04-30 18:07:34,323 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\gamit\AnypointStudio\workspace\.mule\apps\testmuleproject\testmuleproject.xml'}]"
+2019-04-30 18:07:34,331 [main] INFO  com.mulesoft.module.policies.lifecyle.GateKeeper - GateKeeper Mode: DISABLED
+2019-04-30 18:07:34,332 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'testmuleproject'                           +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:07:34,334 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2019-04-30 18:07:34,334 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2019-04-30 18:07:37,499 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://localhost:8090/test
+2019-04-30 18:07:37,777 [main] ERROR org.mule.module.launcher.application.DefaultMuleApplication - 
+********************************************************************************
+Message               : Failed to invoke lifecycle phase "start" on object: org.mule.module.http.internal.listener.DefaultHttpListenerConfig@1945113f
+Element               : /HTTP_Listener_Configuration1 @ app:testmuleproject.xml:12 (HTTP Listener Configuration)
+--------------------------------------------------------------------------------
+Root Exception stack trace:
+java.net.BindException: Address already in use: bind
+	at sun.nio.ch.Net.bind0(Native Method)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.Net.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketChannelImpl.bind(Unknown Source)
+	at sun.nio.ch.ServerSocketAdaptor.bind(Unknown Source)
+	at org.glassfish.grizzly.nio.transport.TCPNIOBindingHandler.bindToChannelAndAddress(TCPNIOBindingHandler.java:131)
+	at org.glassfish.grizzly.nio.transport.TCPNIOBindingHandler.bind(TCPNIOBindingHandler.java:88)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:239)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:219)
+	at org.glassfish.grizzly.nio.transport.TCPNIOTransport.bind(TCPNIOTransport.java:210)
+	at org.mule.module.http.internal.listener.grizzly.GrizzlyServer.start(GrizzlyServer.java:41)
+	at org.mule.module.http.internal.listener.DefaultHttpListenerConfig.start(DefaultHttpListenerConfig.java:274)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:230)
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:108)
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:78)
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:146)
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:134)
+	at org.mule.registry.AbstractRegistryBroker.fireLifecycle(AbstractRegistryBroker.java:88)
+	at org.mule.registry.MuleRegistryHelper.fireLifecycle(MuleRegistryHelper.java:141)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:74)
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:70)
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:146)
+	at org.mule.lifecycle.MuleContextLifecycleManager.fireLifecycle(MuleContextLifecycleManager.java:62)
+	at org.mule.DefaultMuleContext.start(DefaultMuleContext.java:326)
+	at org.mule.module.launcher.application.DefaultMuleApplication.start(DefaultMuleApplication.java:146)
+	at org.mule.module.launcher.artifact.ArtifactWrapper$4.execute(ArtifactWrapper.java:106)
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:137)
+	at org.mule.module.launcher.artifact.ArtifactWrapper.start(ArtifactWrapper.java:101)
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:73)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:547)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:325)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:185)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:274)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:80)
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:577)
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:283)
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:155)
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:135)
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172)
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15)
+
+********************************************************************************
+
+2019-04-30 18:07:37,827 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Disposing app 'testmuleproject'                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:07:37,828 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Stopping flow: testmavenFlow
+2019-04-30 18:07:37,828 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Stopping service: testmavenFlow.stage1
+2019-04-30 18:07:37,829 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Stopping model: _muleSystemModel
+2019-04-30 18:07:37,846 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Stopped listener on http://localhost:8090/test
+2019-04-30 18:07:37,847 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Stopping ResourceManager
+2019-04-30 18:07:37,847 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Stopped ResourceManager
+2019-04-30 18:07:37,851 [main] ERROR org.mule.DefaultMuleContext - Failed to stop Mule context
+org.mule.api.lifecycle.LifecycleException: Failed to invoke lifecycle phase "stop" on object: com.mulesoft.mule.throttling.ThrottlingPhase@2272cbb0
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:243) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.RegistryLifecycleCallback.doApplyLifecycle(RegistryLifecycleCallback.java:108) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.RegistryLifecycleCallback.onTransition(RegistryLifecycleCallback.java:78) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:146) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.RegistryLifecycleManager.fireLifecycle(RegistryLifecycleManager.java:134) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.registry.AbstractRegistryBroker.fireLifecycle(AbstractRegistryBroker.java:88) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.registry.MuleRegistryHelper.fireLifecycle(MuleRegistryHelper.java:141) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:74) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.MuleContextLifecycleManager$MuleContextLifecycleCallback.onTransition(MuleContextLifecycleManager.java:70) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.AbstractLifecycleManager.invokePhase(AbstractLifecycleManager.java:146) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.lifecycle.MuleContextLifecycleManager.fireLifecycle(MuleContextLifecycleManager.java:62) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.DefaultMuleContext.stop(DefaultMuleContext.java:422) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.DefaultMuleContext.dispose(DefaultMuleContext.java:438) ~[mule-core-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.application.DefaultMuleApplication.doDispose(DefaultMuleApplication.java:439) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.application.DefaultMuleApplication.dispose(DefaultMuleApplication.java:324) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.artifact.ArtifactWrapper$1.execute(ArtifactWrapper.java:41) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.executeWithinArtifactClassLoader(ArtifactWrapper.java:137) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.artifact.ArtifactWrapper.dispose(ArtifactWrapper.java:36) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArtifactDeployer.deploy(DefaultArtifactDeployer.java:77) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:547) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployArtifact(DefaultArchiveDeployer.java:325) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:185) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:274) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:80) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DefaultArchiveDeployer.deployPackagedArtifact(DefaultArchiveDeployer.java:577) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.deployPackedApps(DeploymentDirectoryWatcher.java:283) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.DeploymentDirectoryWatcher.start(DeploymentDirectoryWatcher.java:155) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.MuleDeploymentService.start(MuleDeploymentService.java:135) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.module.launcher.MuleContainer.start(MuleContainer.java:172) ~[mule-module-launcher-3.9.1.jar:3.9.1]
+	at org.mule.tooling.server.application.ApplicationDeployer.main(ApplicationDeployer.java:15) ~[tooling-support-3.9.1.jar:?]
+Caused by: java.lang.NullPointerException
+	at com.mulesoft.mule.throttling.ThrottlingPhase.stop(ThrottlingPhase.java:370) ~[mule-module-throttling-ee-3.9.1.jar:3.9.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[?:1.8.0_191]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_191]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source) ~[?:1.8.0_191]
+	at java.lang.reflect.Method.invoke(Unknown Source) ~[?:1.8.0_191]
+	at org.mule.lifecycle.phases.DefaultLifecyclePhase.applyLifecycle(DefaultLifecyclePhase.java:230) ~[mule-core-3.9.1.jar:3.9.1]
+	... 29 more
+2019-04-30 18:07:37,856 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing RegistryBroker
+2019-04-30 18:07:38,320 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Disposing flow: testmavenFlow
+2019-04-30 18:07:38,321 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Disposing service: testmavenFlow.stage1
+2019-04-30 18:07:38,325 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Disposing model: _muleSystemModel
+2019-04-30 18:07:40,435 [main] INFO  org.mule.config.spring.MuleArtifactContext - Closing org.mule.config.spring.MuleArtifactContext@5990e6c5: startup date [Tue Apr 30 18:07:28 IST 2019]; root of context hierarchy
+2019-04-30 18:07:40,581 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application "testmuleproject" shut down normally on: 4/30/19 6:07  *
+* PM                                                                 *
+* Up for: 0 days, 0 hours, 0 mins, 6.243 sec                         *
+**********************************************************************
+2019-04-30 18:08:06,001 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'testmuleproject'                       +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:08:06,011 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2019-04-30 18:08:06,015 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2019-04-30 18:08:06,026 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2019-04-30 18:08:06,026 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.9)
+2019-04-30 18:08:06,030 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@6471eb44: startup date [Tue Apr 30 18:08:06 IST 2019]; root of context hierarchy
+2019-04-30 18:08:06,222 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-04-30 18:08:06,334 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-tx-log\tx1.log and C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-tx-log\tx2.log
+2019-04-30 18:08:06,337 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-xa-tx-log\tx1.log and C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-xa-tx-log\tx2.log
+2019-04-30 18:08:06,346 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2019-04-30 18:08:06,347 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testmavenFlow
+2019-04-30 18:08:06,347 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@9d467ff
+2019-04-30 18:08:06,354 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testmavenFlow.stage1
+2019-04-30 18:08:06,369 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\gamit\AnypointStudio\workspace\.mule\apps\testmuleproject\testmuleproject.xml'}]"
+2019-04-30 18:08:06,370 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\gamit\AnypointStudio\workspace\.mule\apps\testmuleproject\testmuleproject.xml'}]"
+2019-04-30 18:08:06,371 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'testmuleproject'                           +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:08:06,372 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2019-04-30 18:08:06,372 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2019-04-30 18:08:06,390 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://localhost:8090/test
+2019-04-30 18:08:06,395 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://localhost:9090/test
+2019-04-30 18:08:06,398 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:08:06,399 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2019-04-30 18:08:06,400 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: testmavenFlow
+2019-04-30 18:08:06,401 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: testmavenFlow.stage1
+2019-04-30 18:08:06,471 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2019-04-30 18:08:06,538 [Mule.app.deployer.monitor.1.thread.1] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: testmuleproject                                       *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2019-04-30 18:08:26,890 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Initializing app 'testmuleproject'                       +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:08:27,328 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising RegistryBroker
+2019-04-30 18:08:27,436 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Starting discovery of extensions
+2019-04-30 18:08:27,652 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Discovered 1 extensions
+2019-04-30 18:08:27,652 [main] INFO  org.mule.module.extension.internal.manager.DefaultExtensionManager - Registering extension validation (version 3.9)
+2019-04-30 18:08:27,949 [main] INFO  org.mule.config.spring.MuleArtifactContext - Refreshing org.mule.config.spring.MuleArtifactContext@35d6ca49: startup date [Tue Apr 30 18:08:27 IST 2019]; root of context hierarchy
+2019-04-30 18:08:28,909 [main] INFO  org.mule.config.spring.processors.NoDevkitInjectorProcessor - JSR-330 'javax.inject.Inject' annotation found and supported for autowiring
+2019-04-30 18:08:29,612 [main] WARN  org.mule.module.ognl.expression.OgnlExpressionEvaluator - OGNL module is deprecated and will be removed in Mule 4.0. Use MEL expressions instead.
+2019-04-30 18:08:29,891 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-tx-log\tx1.log and C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-tx-log\tx2.log
+2019-04-30 18:08:29,908 [main] INFO  org.mule.util.journal.TransactionJournal - Using files for tx logs C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-xa-tx-log\tx1.log and C:\Users\gamit\AnypointStudio\workspace\.mule\.\.mule\testmuleproject\queue-xa-tx-log\tx2.log
+2019-04-30 18:08:30,010 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Initialising model: _muleSystemModel
+2019-04-30 18:08:30,013 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Initialising flow: testmavenFlow
+2019-04-30 18:08:30,013 [main] INFO  org.mule.exception.DefaultMessagingExceptionStrategy - Initialising exception listener: org.mule.exception.DefaultMessagingExceptionStrategy@2b0e9f30
+2019-04-30 18:08:30,039 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Initialising service: testmavenFlow.stage1
+2019-04-30 18:08:30,368 [main] INFO  org.mule.config.spring.SpringXmlConfigurationBuilder - Configured Mule using "org.mule.config.spring.SpringXmlConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\gamit\AnypointStudio\workspace\.mule\apps\testmuleproject\testmuleproject.xml'}]"
+2019-04-30 18:08:30,368 [main] INFO  org.mule.config.builders.AutoConfigurationBuilder - Configured Mule using "org.mule.config.builders.AutoConfigurationBuilder" with configuration resource(s): "[ConfigResource{resourceName='C:\Users\gamit\AnypointStudio\workspace\.mule\apps\testmuleproject\testmuleproject.xml'}]"
+2019-04-30 18:08:30,373 [main] INFO  com.mulesoft.module.policies.lifecyle.GateKeeper - GateKeeper Mode: DISABLED
+2019-04-30 18:08:30,373 [main] INFO  org.mule.module.launcher.application.DefaultMuleApplication - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ Starting app 'testmuleproject'                           +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:08:30,374 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Starting ResourceManager
+2019-04-30 18:08:30,374 [main] INFO  org.mule.util.queue.QueueXaResourceManager - Started ResourceManager
+2019-04-30 18:08:30,415 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://localhost:8090/test
+2019-04-30 18:08:30,419 [main] INFO  org.mule.module.http.internal.listener.DefaultHttpListenerConfig - Listening for requests on http://localhost:9090/test
+2019-04-30 18:08:30,422 [main] INFO  org.mule.modules.oauth2.provider.agents.DefaultSplashScreenAgent - 
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ DevKit Extensions (0) used in this application 
+                             +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+2019-04-30 18:08:30,423 [main] INFO  org.mule.lifecycle.AbstractLifecycleManager - Starting model: _muleSystemModel
+2019-04-30 18:08:30,424 [main] INFO  org.mule.construct.FlowConstructLifecycleManager - Starting flow: testmavenFlow
+2019-04-30 18:08:30,424 [main] INFO  org.mule.processor.SedaStageLifecycleManager - Starting service: testmavenFlow.stage1
+2019-04-30 18:08:30,455 [main] INFO  org.mule.module.management.agent.WrapperManagerAgent - This JVM hasn't been launched by the wrapper, the agent will not run.
+2019-04-30 18:08:30,470 [main] INFO  org.mule.DefaultMuleContext - 
+**********************************************************************
+* Application: testmuleproject                                       *
+* OS encoding: \, Mule encoding: UTF-8                               *
+*                                                                    *
+* Agents Running:                                                    *
+*   JMX Agent                                                        *
+*   DevKit Extension Information                                     *
+*   Batch module default engine                                      *
+*   Wrapper Manager                                                  *
+**********************************************************************
+2019-04-30 18:09:41,561 [[testmuleproject].HTTP_Listener_Configuration1.worker.01] INFO  org.mule.module.http.internal.listener.HttpListenerRegistry - No listener found for request: (GET)/favicon.ico
+2019-04-30 18:09:41,562 [[testmuleproject].HTTP_Listener_Configuration1.worker.01] INFO  org.mule.module.http.internal.listener.HttpListenerRegistry - Available listeners are: [(*)/test/]
