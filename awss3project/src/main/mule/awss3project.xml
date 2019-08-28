@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns:s3="http://www.mulesoft.org/schema/mule/s3"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/s3 http://www.mulesoft.org/schema/mule/s3/current/mule-s3.xsd
+http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="58a697ae-d5a7-434b-b91b-59fad72dbf7c" >
+		<http:listener-connection host="0.0.0.0" port="8083" />
+	</http:listener-config>
+	<s3:config name="Amazon_S3_Configuration" doc:name="Amazon S3 Configuration" doc:id="380f352d-851f-45c5-9a7e-80011d3d999f" >
+		<s3:basic-connection accessKey="AKIAJKZ7FC4AMUXKOUMA" secretKey="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" region="AP_SOUTH_1"/>
+	</s3:config>
+	<flow name="awss3projectFlow3" doc:id="ea20e07f-4e9a-4094-8423-0722e7d142b1" >
+		<http:listener doc:name="Listener" doc:id="78616871-fc3c-474c-b850-056b77f2e1a8" config-ref="HTTP_Listener_config" path="/aws/createobject"/>
+		<s3:create-object doc:name="Create object" doc:id="7519bf5c-6d72-40b3-b33e-ba8a7fab69d7" config-ref="Amazon_S3_Configuration" bucketName="sridharamit-test123" key="test.txt" contentType="text/plain"/>
+		<ee:transform doc:name="Transform Message" doc:id="3f9affb4-e100-4a47-b58f-c288a081f1ba" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="awss3projectFlow" doc:id="ea863b78-162b-451f-952f-805581d8117b" >
+		<http:listener doc:name="Listener" doc:id="265df058-04a9-439d-a82b-b2bcbd48aa46" config-ref="HTTP_Listener_config" path="/aws"/>
+		<logger level="INFO" doc:name="Logger" doc:id="177f1d30-e497-4aec-815c-7756646265c2" message="#[payload]"/>
+		<s3:create-bucket doc:name="Create bucket" doc:id="07e174b3-f979-4f64-bf22-55053807249e" bucketName="amitmule-test124" config-ref="Amazon_S3_Configuration" acl="PUBLIC_READ"/>
+		<ee:transform doc:name="Transform Message" doc:id="16d7aed4-35f2-4f04-8453-236500b2eb2f" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+{
+	
+	"Status":"Success"
+	
+}]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+	<flow name="awss3projectFlow2" doc:id="97ca31b4-7e99-4de4-9481-c3bcefd84cef" >
+		<http:listener doc:name="Listener" doc:id="de876fb1-e943-40b3-b69c-a22e1d799c01" config-ref="HTTP_Listener_config" path="/aws/delete"/>
+		<s3:delete-bucket doc:name="Delete bucket" doc:id="d485bcee-9a56-4c20-afd6-d0068720672b" config-ref="Amazon_S3_Configuration" bucketName="amitmule-test124"/>
+		<ee:transform doc:name="Transform Message" doc:id="0f4b594b-a0cf-4ebd-b97c-2b70d40f2455" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+		<logger level="INFO" doc:name="Logger" doc:id="15ad0a49-394f-4f67-9df0-3412e56086dc" message="#[payload]"/>
+	</flow>
+	<flow name="awss3projectFlow1" doc:id="2c8d78f2-6912-49f0-9f8e-36dd886f707e" >
+		<http:listener doc:name="Listener" doc:id="5907c058-2b99-41f2-8452-01b13f70d534" config-ref="HTTP_Listener_config" path="/aws/list"/>
+		<s3:list-buckets doc:name="List buckets" doc:id="8dee0964-483f-4756-ab0a-6b833c365756" config-ref="Amazon_S3_Configuration" region="AP_SYDNEY"/>
+		<logger level="INFO" doc:name="Logger" doc:id="6ffec4cc-112e-44d8-a5a7-62bb506819eb" message="#[payload]"/>
+		<ee:transform doc:name="Transform Message" doc:id="2d0f9f00-db2e-4fbb-87d1-e02ba4423b79" >
+			<ee:message >
+				<ee:set-payload ><![CDATA[%dw 2.0
+output application/json
+---
+payload]]></ee:set-payload>
+			</ee:message>
+		</ee:transform>
+	</flow>
+</mule>
