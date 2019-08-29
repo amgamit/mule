@@ -28,10 +28,10 @@
 				<cloudHubDeployment>				
 				<uri>https://anypoint.mulesoft.com</uri>
 				<muleVersion>4.2.1</muleVersion>
-				<username>amgamit5</username>
-				<password>Amkg3712zzaa!</password>
+				<username>${username}</username>
+				<password>${password}</password>
 				<applicationName>${project.artifactId}</applicationName>
-				<environment>Sandbox</environment>
+				<environment>${environment}</environment>
 				</cloudHubDeployment>
 				</configuration>
 			</plugin>
