@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="af916cf0-7593-45a6-a2d5-bd495763637a" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="mule-cloudhub-deploymentFlow" doc:id="695bce36-138c-46d9-8a1f-a07e33dce7e0" >
+		<http:listener doc:name="Listener" doc:id="e84701fd-9fb0-4099-87bf-c019fb464e4b" config-ref="HTTP_Listener_config" path="/cloudhub"/>
+		<logger level="INFO" doc:name="Logger" doc:id="b6a64c8e-91b6-403e-ba75-5b3476f74cd1" message="Application deployed on cloud hub !!!!!!!!!!"/>
+	</flow>
+</mule>
